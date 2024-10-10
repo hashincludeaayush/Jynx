@@ -12,12 +12,20 @@ type Props = {
   params: { id: string; key:any }
 }
 
-const ProductDetails: React.FC<Props> = async ({ params: { id } }) => {
+const ProductDetails = async ({ params: { id } }: Props) => {
   const product: Product = await getProductById(id);
 
   if(!product) redirect('/')
 
-  const similarProducts = await getSimilarProducts(id);
+  try {
+    const similarProducts = await getSimilarProducts(id);
+    console.log('Similar products:', similarProducts);
+  } catch (error) {
+    console.error('Error fetching product details:', error);
+  } finally {
+    // Any cleanup or final actions can be done here
+  }
+  
 
   return (
     <div className="product-container">
@@ -196,3 +204,7 @@ const ProductDetails: React.FC<Props> = async ({ params: { id } }) => {
 }
 
 export default ProductDetails
+
+function then(arg0: (result: any) => void) {
+  throw new Error("Function not implemented.");
+}
