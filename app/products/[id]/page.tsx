@@ -12,7 +12,7 @@ type Props = {
   params: { id: string; key:any }
 }
 
-const ProductDetails = async ({ params: { id } }: Props) => {
+const ProductDetails: React.FC<Props> = async ({ params: { id } }) => {
   const product: Product = await getProductById(id);
 
   if(!product) redirect('/')
