@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import Product from "../models/product.model";
 import { connectToDB } from "../mongoose";
 import { scrapeAmazonProduct } from "../scraper";
-import { getAveragePrice, getHighestPrice, getLowestPrice } from "../utils";
+import { getAveragePrice, getHighestPrice, getLowestPrice } from "../utility";
 import { User } from "@/types";
 import { generateEmailBody, sendEmail } from "../nodemailer";
 

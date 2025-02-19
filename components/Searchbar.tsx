@@ -2,6 +2,7 @@
 
 import { scrapeAndStoreProduct } from '@/lib/actions';
 import { FormEvent, useState } from 'react'
+import { Button } from './ui/button';
 
 const isValidAmazonProductURL = (url: string) => {
   try {
@@ -46,8 +47,9 @@ const Searchbar = () => {
   }
 
   return (
+    
     <form 
-      className="flex flex-wrap gap-4 mt-12" 
+      className="flex flex-wrap gap-4 mt-150" 
       onSubmit={handleSubmit}
     >
       <input 
@@ -58,13 +60,13 @@ const Searchbar = () => {
         className="searchbar-input"
       />
 
-      <button 
+      <Button 
         type="submit" 
         className="searchbar-btn"
-        disabled={searchPrompt === ''}
+        //disabled={searchPrompt === ''}
       >
         {isLoading ? 'Searching...' : 'Search'}
-      </button>
+      </Button>
     </form>
   )
 }
