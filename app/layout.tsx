@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, Nunito } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 const nunito = Inter({ subsets: ["latin"] });
@@ -32,7 +33,7 @@ export default function RootLayout({
         >
           <main className="">
             <Navbar />
-            {children}
+            <Suspense>{children}</Suspense>
           </main>
         </ThemeProvider>
       </body>
