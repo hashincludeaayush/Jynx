@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
